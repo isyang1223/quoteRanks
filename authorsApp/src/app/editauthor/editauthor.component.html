@@ -1,0 +1,13 @@
+<a [routerLink]="['']">Home</a>
+<p>Edit this author</p>
+
+<p>Name:
+  <input #authorName type="text" name="name" value="{{author.name}}">
+</p>
+<p>{{error}}</p>
+<button [routerLink]="['']">
+  Cancel
+</button>
+<button (click)="saveAuthor(authorName.value)">
+  Submit
+</button>

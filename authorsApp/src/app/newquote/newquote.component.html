@@ -1,0 +1,12 @@
+<a [routerLink]="['']">Home</a>
+
+
+<p>Provide a quote by {{ author.name }}</p>
+<form (submit)="onSubmit()">
+  <!-- use the json pipe to see how newTask changes in real time -->
+  <p> {{ newQuote | json }} </p>
+  <input type="text" name="newQuote.quote" [(ngModel)]="newQuote.quote" />
+  <p *ngIf="(error)">{{error}}</p>
+  <input type="submit" value="Submit" />
+</form>
+<button [routerLink]="['/quotes/' + author._id]">Cancel</button>
